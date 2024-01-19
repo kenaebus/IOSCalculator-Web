@@ -4,98 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
-    <script src="script.js"></script>
-    <style>
-        .main {
-            font-size: 125%;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            max-width: 30%;
-            padding-top: 30px;
-            padding-right: 10px;
-            border-radius: 30px;
-            padding-bottom: 15px;
-            background-color: rgb(17, 17, 17);
-            
-        }
-        #current {
-            color:white;
-            text-align: right;
-            font-size: 50px;
-            padding-right: 40px;
-        }
-
-        .numpad {
-            display: flex;
-            justify-content: center;
-        }
-        .numbers {
-            text-align: center;
-        }
-
-        button {
-            padding: 10px;
-            margin: 5px;
-            width: 70px;
-            height: 70px;
-            font-size: 30px;
-            font-weight: lighter;
-            border-radius: 50px;
-            border: none;
-            color:white;
-            background-color: gray;
-        }
-        
-        .topbttn {
-            background-color: rgba(255, 255, 255, 0.904);
-            color: rgb(0, 0, 0);
-        }
-        .operations button {
-            background-color:orange;
-            font-size: 40px;
-        }
-        #zero {
-            width: 160px;
-            text-align: left;
-            padding-left:30px;
-        }
-    </style>
+    <script src="script.js" async></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="main">
+        <h2 id="prevCurrent">0</h2>
         <h1 id="current">0</h1>
         <div class="numpad">
             <div class="numbers">
-                <button class="topbttn">AC</button>
-                <button class="topbttn">+/-</button>
-                <button class="topbttn">%</button>
+                <button id="topbttn" onclick="clearDisplay()">AC</button>
+                <button id="topbttn">+/-</button>
+                <button id="topbttn">%</button>
                 <br>
-                <button data-number>7</button>
-                <button data-number>8</button>
-                <button data-number>9</button>
+                <button onclick="appendToCalcDisplay('7')">7</button>
+                <button onclick="appendToCalcDisplay('8')">8</button>
+                <button onclick="appendToCalcDisplay('9')">9</button>
                 <br>
-                <button data-number>4</button>
-                <button data-number>5</button>
-                <button data-number>6</button>
+                <button onclick="appendToCalcDisplay('4')">4</button>
+                <button onclick="appendToCalcDisplay('5')">5</button>
+                <button onclick="appendToCalcDisplay('6')">6</button>
+                <br> 
+                <button onclick="appendToCalcDisplay('1')">1</button>
+                <button onclick="appendToCalcDisplay('2')">2</button>
+                <button onclick="appendToCalcDisplay('3')">3</button>
                 <br>
-                <button data-number>1</button>
-                <button data-number>2</button>
-                <button data-number>3</button>
-                <br>
-                <button data-number id="zero">0</button>
-                <button>.</button>
+                <button id="zero" onclick="appendToCalcDisplay('0')">0</button>
+                <button onclick="decimal()">.</button>
             </div>
             <div class="operations">
-                <button data-operation>÷</button>
+                <button onclick="divide(' + ')">÷</button>
                 <br>
-                <button data-operation>×</button>
+                <button onclick="multiply(' + ')">×</button>
                 <br>
-                <button data-operation>-</button>
+                <button onclick="subtract()">-</button>
                 <br>
-                <button data-operation>+</button>
+                <button onclick="add()">+</button>
                 <br>
-                <button data-equals>=</button>
+                <button onclick="calculate()">=</button>
             </div>
         </div>
     </div>

@@ -1,33 +1,37 @@
-console.log("Working!");
+const currentText = document.getElementById("current");
+const previousText = document.getElementById("prevCurrent");
 
-class Calculator {
-    constructor(currentText) {
-        this.currentText = currentText
-        
-    }
-
-    clear() {
-
-    }
-
-
-    append() {
-
-    }
-
-    update() {
-
-    }
-
-    calculate() {
-
+function appendToCalcDisplay(x) {
+    if (currentText.innerText == 0) {
+        currentText.innerText = x;
+        previousText.innerText = x;
+    } else {
+        previousText.innerText += x;
+        currentText.innerText += x;
     }
 }
 
+function clearDisplay() {
+    currentText.innerText = 0;
+    previousText.innerText = 0;
+}
 
-const currentText = document.getElementById("current")
-const numberButtns = document.querySelectorAll('[data-number]')
-const operationBttns = document.querySelectorAll('[data-operation')
-const equalsBttn = document.querySelector('[data-equals')
+function add() {
+    // FIXME: Work on 'add' function
+}
 
-const calculator = Calculator(currentText);
+function multiply() {
+    // FIXME: Work on 'multiply' function
+}
+
+function divide() {
+    // FIXME: Work on 'divide' function
+}
+
+function subtract() {
+    // FIXME: Work on 'subtract' function
+}
+
+function decimal() {
+    // FIXME: Work on 'decimal' function
+}
